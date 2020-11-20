@@ -1,7 +1,7 @@
 <?php
 require'config/config.php';
 require'includes/form_handler/register_handler.php';
-
+require'includes/form_handler/login_handler.php';
 
 ?>
 <html>
