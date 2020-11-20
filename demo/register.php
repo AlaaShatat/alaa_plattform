@@ -47,5 +47,6 @@ require'includes/form_handler/register_handler.php';
     <?php if(in_array("<span style='color:red;' > you are all set up, hurry up and log in</span><br>",$error_array)) echo"<span style='color:red;' > you are all set up, hurry up and log in</span><br>" ?>
     
     </form>
+    echo "GitHub";
 </body>
 </html>
