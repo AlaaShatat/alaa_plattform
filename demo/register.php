@@ -15,7 +15,7 @@ require'includes/form_handler/login_handler.php';
 <br>
 <!-- password-->
 <input type ="password" name="log_password" placeholder="password" required>
-<?php if( in_array($error_array,"email address or password is not correct, please try again<br>")) echo"email address or password is not correct, please try again<br>"
+<?php if( in_array("email address or password is not correct, please try again<br>",$error_array)) echo"email address or password is not correct, please try again<br>"
 ?>
 <br>
 <!-- submit-->
