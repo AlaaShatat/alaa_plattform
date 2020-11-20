@@ -1,4 +1,5 @@
 <?php
+//$error_array=array();
 //get the data from the login form 
 if(isset($_POST['login_button']))
 {
