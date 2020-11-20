@@ -15,6 +15,8 @@ require'includes/form_handler/login_handler.php';
 <br>
 <!-- password-->
 <input type ="password" name="log_password" placeholder="password" required>
+<?php if( in_array($error_array,"email address or password is not correct, please try again<br>")) echo"email address or password is not correct, please try again<br>"
+?>
 <br>
 <!-- submit-->
 <input type ="submit" name="login_button" value="login" >
@@ -57,6 +59,6 @@ require'includes/form_handler/login_handler.php';
     <?php if(in_array("<span style='color:red;' > you are all set up, hurry up and log in</span><br>",$error_array)) echo"<span style='color:red;' > you are all set up, hurry up and log in</span><br>" ?>
     
     </form>
-    echo "GitHub";
+    
 </body>
 </html>
