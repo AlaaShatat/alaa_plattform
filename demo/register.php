@@ -12,6 +12,7 @@ require'includes/form_handler/register_handler.php';
 <form action="register.php" method ="post" >
 <!-- email-->
 <input type ="email" name="reg_email" placeholder="email" required>
+<br>
 <!-- password-->
 <input type ="password" name="reg_password" placeholder="password" required>
 <!-- submit-->
