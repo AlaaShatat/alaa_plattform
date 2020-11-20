@@ -9,6 +9,14 @@ require'includes/form_handler/register_handler.php';
 <title>welcome to alaa </title>
 </head>
 <body>
+<form action="register.php" method ="post" >
+<!-- email-->
+<input type ="email" name="reg_email" placeholder="email" required>
+<!-- password-->
+<input type ="password" name="reg_password" placeholder="password" required>
+<!-- submit-->
+<input type ="submit" name="reg_login" value="login" >
+</form>
     <form action="register.php" method ="post" >
 <input type="text" name="reg_fname" placeholder="first name" value="<?php if (isset($_SESSION['reg_fname'])){
   echo$_SESSION['reg_fname'];
