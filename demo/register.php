@@ -17,7 +17,7 @@ require'includes/form_handler/register_handler.php';
 <input type ="password" name="log_password" placeholder="password" required>
 <br>
 <!-- submit-->
-<input type ="submit" name="log_login" value="login" >
+<input type ="submit" name="login_button" value="login" >
 </form>
     <form action="register.php" method ="post" >
 <input type="text" name="reg_fname" placeholder="first name" value="<?php if (isset($_SESSION['reg_fname'])){
