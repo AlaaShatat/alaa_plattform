@@ -15,6 +15,7 @@ require'includes/form_handler/register_handler.php';
 <br>
 <!-- password-->
 <input type ="password" name="reg_password" placeholder="password" required>
+<br>
 <!-- submit-->
 <input type ="submit" name="reg_login" value="login" >
 </form>
