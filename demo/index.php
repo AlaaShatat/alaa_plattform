@@ -6,16 +6,7 @@ if(mysqli_connect_errno()){
 	echo "failed to connect:".mysqli_connect_errno(); 
 }
 echo "connected successfully";
-//$query =mysqli_query($con,"INSERT INTO test VALUES(NULL,'hi')");
 
-$sql = "INSERT INTO test VALUES(null,'yesss');";
-//$sql = "INSERT INTO MyGuests (firstname, lastname, email) VALUES ('John', 'Doe', 'john@example.com')";
-
-if (mysqli_query($con, $sql)) {
-	echo "New record created successfully";
-  } else {
-	echo "Error: " . $sql . "<br>" . mysqli_error($con);
-  }
 ?>
 
 <!DOCTYPE html>
