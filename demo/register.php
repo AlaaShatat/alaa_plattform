@@ -7,6 +7,7 @@ require'includes/form_handler/login_handler.php';
 <html>
 <head>
 <title>welcome to alaa </title>
+<link rel="stylesheet" type="text/css " href="assets/css/register_style.css">
 </head>
 <body>
 <form action="register.php" method ="post" >
