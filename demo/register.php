@@ -65,7 +65,7 @@ require'includes/form_handler/login_handler.php';
     <?php if(in_array("passwords don't match <br>",$error_array)) echo"passwords don't match <br>"; ?>
       <input type="submit" name="register_button" value="register" >
       <br>
-      <?php if(in_array("<span style='color:red;' > you are all set up, hurry up and log in</span><br>",$error_array)) echo"<span style='color:red;' > you are all set up, hurry up and log in</span><br>" ?>
+      <?php if(in_array("<span style='color:#000000;' > you are all set up, hurry up and log in</span><br>",$error_array)) echo"<span style='color:#000000;' > you are all set up, hurry up and log in</span><br>" ?>
       
     </form>
     </div>
