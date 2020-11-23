@@ -127,7 +127,7 @@ else if($rand=2)
  //insert into the database direct
 $sql = "INSERT INTO users VALUES('','$fname','$lname','$username','$email','$password','$date','$profile_pic','0','0','no',',')";
 $quer=mysqli_query($con,$sql);
-array_push($error_array,"<span style='color:red;' > you are all set up, hurry up and log in</span><br>");
+array_push($error_array,"<span style='color:#000000;' > you are all set up, hurry up and log in</span><br>");
 // remove the information 
 $_SESSION['reg_fname']="";
 $_SESSION['reg_lname']="";
