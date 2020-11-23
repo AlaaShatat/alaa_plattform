@@ -12,6 +12,13 @@ if(isset($_POST['login_button']))
     {
         $row=mysqli_fetch_array($check_database);
         $username=$row['username'];
+        $check_closed=mysqli_query($con,"SELECT * FROM users WHERE email='$email' AND user_closed='yes'");
+        if(mysqli_num_rows($check_closed)==1)
+        {
+            $reopen_account=mysqli_query($con, "UPDATE users SET user_closed ='no' WHERE email='$email'");
+
+        }
+
         $_SESSION['username']=$username;
        // $profile_pic=$row['profile_pic'];
        header("Location: index.php");
@@ -22,8 +29,6 @@ if(isset($_POST['login_button']))
     else
     {
         array_push($error_array,"email address or password is not correct, please try again<br>");
-
-
     }
 
 
