@@ -93,4 +93,19 @@ input[type="password"] ,input[type="text"] ,input[type="email"]
     margin: 5px 5px 5px 5px;
     font-family: 'Bellota-LightItalic.otf',sans-serif;
     width:50%;
+    height:30px;
+    padding:5px;
+}
+input[type="password"]:hover ,input[type="text"]:hover ,input[type="email"]:hover
+{
+    border-color:rgb(124, 6, 6) 0.5px 0.5px 0.5px 0.5px;
+
+}
+a{
+text-decoration: none;
+color:rgb(27, 26, 26);
+font-family: 'Bellota-BoldItalic.otf',sans-serif;
+}
+.second{
+    display:none;
 }
