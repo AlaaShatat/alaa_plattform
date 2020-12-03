@@ -8,6 +8,8 @@ require'includes/form_handler/login_handler.php';
 <head>
 <title>welcome to alaa </title>
 <link rel="stylesheet" type="text/css " href="styling/register_style.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
 </head>
 <body>
 <div class="wrapper">
