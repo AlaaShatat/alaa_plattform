@@ -106,6 +106,7 @@ text-decoration: none;
 color:rgb(27, 26, 26);
 font-family: 'Bellota-BoldItalic.otf',sans-serif;
 }
-.second{
+#second{
     display:none;
+    
 }
