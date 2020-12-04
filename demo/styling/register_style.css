@@ -98,7 +98,7 @@ input[type="password"] ,input[type="text"] ,input[type="email"]
 }
 input[type="password"]:hover ,input[type="text"]:hover ,input[type="email"]:hover
 {
-    border-color:rgb(124, 6, 6) 0.5px 0.5px 0.5px 0.5px;
+    border-color: rgba(24, 24, 7, 0.877);
 
 }
 a{
