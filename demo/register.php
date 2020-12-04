@@ -19,8 +19,8 @@ require'includes/form_handler/login_handler.php';
     <script>
       $(document).ready(function()
       { 
-        $("#frist").hide();
-        $("#second").show();
+          $("#first").hide();
+          $("#second").show();
       });
     </script>
     ';
