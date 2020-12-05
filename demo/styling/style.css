@@ -140,3 +140,22 @@ textarea:focus
 {
     outline:0 ;
 }
+.post_form input[type="submit"]
+{
+    width:10%;
+    height: 30px;
+    border-radius: 5px;
+    margin:5px 5px 5px 5px;
+    padding: 5px ;
+    font-size: 15px;
+    font-family:'Bellota-BoldItalic.otf' ,sans-serif;
+    background-color:rgb(182, 187, 182) ;
+    border: none;
+    position: absolute;
+    outline:0;
+}
+.post_form input[type="submit"]:active
+{
+    padding: 7px 5px 7px 5px;
+    color:#fff;
+}
