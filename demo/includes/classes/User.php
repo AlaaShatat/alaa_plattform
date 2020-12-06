@@ -12,15 +12,15 @@ class User
     //get username
     public function getusername()
     {
-        return this->user['username']
+        return $this->user['username'];
 
 
     }
-    //get num of posts
+    //get number of posts
     public function getnumofposts()
     {
-        $username=this user['username'];
-        $query=   mysqli_query($this->con,"SELECT no_post FROM users WHERE username='$username'");
+        $username=$this->user['username'];
+        $query=mysqli_query($this->con,"SELECT no_post FROM users WHERE username='$username'");
         $row=mysqli_fetch_array($query);
         return $row['no_post'];
 
