@@ -1,9 +1,10 @@
 <?php
 include("includes/header.php");
+include("includes/classes/User.php");
 //session_destroy(); 
 ?>
 <div class="user_details column">
-	<a href="#"><img src="<?php echo $user['profile_pic'];?>" >
+	<a href="<?php echo $userloggedin ?>"><img src="<?php echo $user['profile_pic'];?>" >
 	</a>
 	<div class="user_details_left_right">
 		<a href="#">	
@@ -27,7 +28,11 @@ include("includes/header.php");
 		<input type="submit" name="post" id="post_button" value="post">
 		<hr>
 	</form>
-
+	<?php
+		$user_obj=new User($con,$userloggedin);
+		echo $user_obj->getfirst_lastname();
+	
+	?>
 
 
 </div>
