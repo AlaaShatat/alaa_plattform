@@ -33,7 +33,7 @@ else
             <a href= "index.php">Alaa!</a>
         </div>
         <nav>
-            <a href="#">
+            <a href="<?php echo $userloggedin ?>">
            <?php echo $user['first_name'];?> 
             </a>
             <a href="index.php">
