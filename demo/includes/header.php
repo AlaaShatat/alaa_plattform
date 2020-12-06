@@ -21,7 +21,8 @@ else
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="assets/js/bootstrap.js"></script>
 <!-- css-->
-    <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.no-icons.min.css" rel="stylesheet"> 
+<!-- font awesom for icons-->
+    <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.no-icons.min.css" rel="stylesheet">
     <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet"> 
     <link rel="stylesheet" type=text/css href="styling/bootstrap.css">
     <link rel="stylesheet" type=text/css href="styling/style.css">
@@ -39,6 +40,10 @@ else
             <a href="index.php">
             <i class="icon-home icon-large"></i>
             </a>
+            <!-- try to find the icons 
+            <a href="index.php">
+            <i class="icon-camera-retro icon-large"></i> 
+            </a> -->
             <a href="#">
             <i class="icon-envelope"></i> 
             </a>
@@ -50,6 +55,9 @@ else
             </a>
             <a href="#">
             <i class="icon-cog"></i>    
+            </a>
+            <a href="logout.php">
+            <i class="icon-signout"></i>    
             </a>
         </nav>
    </div>
