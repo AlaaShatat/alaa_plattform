@@ -1,7 +1,20 @@
 <?php
 include("includes/header.php");
 include("includes/classes/User.php");
-//session_destroy(); 
+include("includes/classes/Post.php");
+//session_destroy();
+
+if (isset($_POST['post'])) 
+{
+	//echo "Hello from post";
+	//die();
+	$post= new Post($con,$userloggedin);
+	//it takes body and user to fro now we make it none just in the start 
+	$post->submitpost($_POST['post_text'],'none');
+	header("Location:index.php");
+	
+
+}  
 ?>
 <div class="user_details column">
 	<a href="<?php echo $userloggedin ?>"><img src="<?php echo $user['profile_pic'];?>" >
