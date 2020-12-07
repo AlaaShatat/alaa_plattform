@@ -38,26 +38,26 @@ else
            <?php echo $user['first_name'];?> 
             </a>
             <a href="index.php">
-            <i class="icon-home icon-large"></i>
+            home
             </a>
             <!-- try to find the icons 
             <a href="index.php">
             <i class="icon-camera-retro icon-large"></i> 
             </a> -->
             <a href="#">
-            <i class="icon-envelope"></i> 
+            messages
             </a>
             <a href="#">
-            <i class="icon-user"></i>    
+            users    
             </a>
             <a href="#">
-            <i class="icon-bell"></i>
+            notifications
             </a>
             <a href="#">
-            <i class="icon-cog"></i>    
+            settings   
             </a>
-            <a href="logout.php">
-            <i class="icon-signout"></i>    
+            <a href="includes/handlers/logout.php">
+            logout    
             </a>
         </nav>
    </div>
