@@ -42,9 +42,8 @@ if (isset($_POST['post']))
 		<hr>
 	</form>
 	<?php
-		$user_obj=new User($con,$userloggedin);
-		echo $user_obj->getfirst_lastname();
-	
+		$post= new Post($con,$userloggedin);
+		$post->loadpostfriends();
 	?>
 
 
