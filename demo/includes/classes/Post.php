@@ -114,14 +114,14 @@ class Post
                 }
                 //if m =1
                 if($interval->m==1){
-                    $time_message= $interval->m ."month ". $days;
+                    $time_message= $interval->m ."month". $days;
                 }
                 else{
                     $time_message=$interval->m ."months".$days;
                 }
             }
             // for days only i.e 12 days ago 
-            if($interval->d >=1)
+           else if($interval->d >=1)
             {
                 if($interval->d ==1)
                 {
@@ -132,7 +132,7 @@ class Post
                     $days=$interval->d ."days ago";
                 }
             }
-            if($interval->h >=1)
+            else if($interval->h >=1)
             {   
                  if($interval->h ==1)
                 {
@@ -143,7 +143,7 @@ class Post
                     $time_message=$interval->h ."hours ago";
                 }
             }
-            if($interval->i >=1)
+            else if($interval->i >=1)
             {   
                  if($interval->i ==1)
                 {
@@ -158,7 +158,7 @@ class Post
             {
                 if($interval->s <30)
                 {   
-                    $time_message=$interval->s ."just now";
+                    $time_message="just now";
                 }        
                 else
                 {
