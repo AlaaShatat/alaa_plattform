@@ -34,82 +34,79 @@ if (isset($_POST['post']))
 		</a>
 	</div>
 </div>
-<div class="main_column column">
-	<form action="index.php" class="post_form" method="POST">
-		<textarea name="post_text" id ="post_text" placeholder="what's in your mind?"></textarea>
-		<br>
-		<input type="submit" name="post" id="post_button" value="post">
-		<hr>
-	</form>
-	<?php
-		$post= new Post($con,$userloggedin);
-		$post->loadpostfriends();
-	?>
-	<div class="posts_area"></div>
-<img id="#loading" src="assets/images/icons/loading.gif">
+	<div class="main_column column">
+		<form action="index.php" class="post_form" method="POST">
+			<textarea name="post_text" id ="post_text" placeholder="what's in your mind?"></textarea>
+			<br>
+			<input type="submit" name="post" id="post_button" value="post">
+			<hr>
+		</form>
+		
+		<div class="posts_area"></div>
+		<img id="loading" src="assets/images/icons/loading.gif">
 
-</div>
+	</div>
 
-<script>
-var userloggedin ='<?php echo $userloggedin?>';
+	<script>
+		var userloggedin ='<?php echo $userloggedin; ?>';
 
-$(document).ready(function(){
+		$(document).ready(function(){
 
-$('#loading').show();
-// ajax for loading posts
-$.ajax({
-	url:"includes/handlers/ajax.php",
-	type:"POST",
-	data:"page=1&userloggedin=" + userloggedin,
-	cache:false;
+			$('#loading').show();
+			// ajax for loading posts
+			$.ajax({
+				url:"includes/handlers/ajax.php",
+				type:"POST",
+				data:"page=1&userloggedin=" + userloggedin,
+				cache:false,
 
-	success:function(data)
-	{
-		$('#loading').hide();
-		$('.posts_area').html(data);
-	}
-});  
-$(window).scroll(function(){
-var height=$('.posts_area').height();
-var scroll_top=$(this).scrollTop();
-var page=$('.posts_area').find('.nextpage').val();
-var nomoreposts=$('.posts_area').find('.nomoreposts').val();
+				success:function(data)
+				{
+					$('#loading').hide(); //dont show loading sign again 
+					$('.posts_area').html(data);
+				}
+			});  //end of ajax
+		$(window).scroll(function(){
+		var height=$('.posts_area').height(); //div containing posts
+		var scroll_top=$(this).scrollTop();
+		var page=$('.posts_area').find('.nextpage').val();//   created int post class
+		var nomoreposts=$('.posts_area').find('.nomoreposts').val();
+		//alert("hello");
 
-if((document.body.scrollHeight==document.body.scrollTop +window.innerHeight)&&nomoreposts=='false')
-{
-	$('#loading').show();
-	var ajaxreq = $.ajax({
-	url:"includes/handlers/ajax.php",
-	type:"POST",
-	data:"page="+"&userloggedin=" + userloggedin,
-	cache:false;
+		// function to scroll to the bottom //rl moshkla msh radi yd5ol  el if aslnn
+		if((document.body.scrollHeight == document.body.scrollTop + window.innerHeight) && nomoreposts=='false')
+		{
+			
+			$('#loading').show();
+			alert("hello");
+			var ajaxReq = $.ajax({
+			url:"includes/handlers/ajax.php",
+			type:"POST",
+			data:"page=" + page + "&userloggedin=" + userloggedin,
+			cache:false,
 
-	success:function(response)
-	{
-		$('.posts_area').find('.nextpage').remove();
-		$('.posts_area').find('.nomoreposts').remove();
+				success:function(response)
+				{
+					$('.posts_area').find('.nextpage').remove();
+					$('.posts_area').find('.nomoreposts').remove();
 
-		$('#loading').hide();
-		$('.posts_area').append(response);
-	}
-});  
+					$('#loading').hide();
+					$('.posts_area').append(response);//add new posts to the existing posts
+				}
+			});  
 
-}//end if
+		}//end if
 
-return false;
-
-
-});//end $(window).scroll(function(){
+		return false;
 
 
-
-});
+		});//end $(window).scroll(function(){*/
 
 
 
+		});
 
-
-</script>
+	</script>
 
 
 
