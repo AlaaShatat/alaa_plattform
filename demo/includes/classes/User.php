@@ -33,6 +33,14 @@ class User
         $row=mysqli_fetch_array($query);
         return $row['first_name']." ".$row['last_name'];
     }
+    //get profile_pic
+    public function getprofile_pic()
+    {
+        $username=$this->user['username'];
+        $query=mysqli_query($this->con,"SELECT profile_pic FROM users WHERE username='$username'");
+        $row=mysqli_fetch_array($query);
+        return $row['profile_pic'];
+    }
     public function isclosed()
     {
         $username=$this->user['username'];
