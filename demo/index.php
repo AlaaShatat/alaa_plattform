@@ -20,7 +20,7 @@ if (isset($_POST['post']))
 	<a href="profile.php"><img src="<?php echo $user['profile_pic'];?>" >
 	</a>
 	<div class="user_details_left_right">
-		<a href="#">	
+		<a href="profile.php">	
 			<?php
 			echo $user['first_name']." ".$user['last_name'] ."<br>"; 
 			?>

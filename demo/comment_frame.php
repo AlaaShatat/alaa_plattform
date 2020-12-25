@@ -1,11 +1,4 @@
-<html>
-<head>
-	<title></title>
-	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
-</head>
-<body>
-
-	<?php  
+<?php  
 	require 'config/config.php';
 	include("includes/classes/User.php");
 	include("includes/classes/Post.php");
@@ -20,6 +13,14 @@
 	}
 
 	?>
+<html>
+<head>
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
+</head>
+<body>
+
+	
 	<script>
 		function toggle() {
 			var element = document.getElementById("comment_section");
@@ -45,10 +46,20 @@
 	if(isset($_POST['postComment' . $post_id])) {
 		$post_body = $_POST['post_body'];
 		$post_body = mysqli_escape_string($con, $post_body);
-		$date_time_now = date("Y-m-d H:i:s");
+        $date_time_now = date("Y-m-d H:i:s");
+        // show if the comment is empty
+        $post_body=strip_tags($post_body);//strip html tags
+        $post_body=mysqli_real_escape_string($con,$post_body);//escape the quotes ti ignore mi$smatch
+        $post_body=str_replace('\r\n', '\n',$post_body);
+        $post_body=nl2br($post_body);
+        $chech_space=preg_replace('/\s+/','',$post_body);//erase any space
+       //check spaces
+        if($chech_space !="")
+        {
 		$insert_post = mysqli_query($con, "INSERT INTO comments VALUES ('', '$post_body', '$userloggedin', '$posted_to', '$date_time_now', 'no', '$post_id')");
 		echo "<p> WOhoo Comment Posted! </p>";
-	}
+        }
+    }
 	?>
 	<form action="comment_frame.php?post_id=<?php echo $post_id; ?>" id="comment_form" name="postComment<?php echo $post_id; ?>" method="POST">
 		<textarea name="post_body"></textarea>
@@ -168,7 +179,12 @@
             }//end of while($comment=mysqli_fetch_array($get_comments))
 
         }// if($count!=0)
-    
+        else
+        {
+            echo"<center><br><br> No comments to show!</center>";
+        }
+
+
     ?>
     
 

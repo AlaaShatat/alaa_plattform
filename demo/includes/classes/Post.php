@@ -122,7 +122,9 @@ class Post
                     ?>
 					<script> 
 						function toggle<?php echo $id; ?>() {
-
+                            var target=$(event.target);
+                            if(!target.is("a"))
+                            {
  							
 								var element = document.getElementById("toggleComment<?php echo $id; ?>");
 
@@ -130,11 +132,14 @@ class Post
 									element.style.display = "none";
 								else 
 									element.style.display = "block";
-							
+                            }	
 						}
 
 					</script>
 					<?php
+                    // check num of comments
+                    $comment_check=mysqli_query($this->con, "SELECT * FROM comments WHERE post_id='$id'");
+                    $comment_check_num=mysqli_num_rows($comment_check);
                     //time frame
                     $date_time_now=date("Y-m-d H:i:s");//teh current date
                     $start_date=new DateTime($date_time);//time of post
@@ -230,7 +235,12 @@ class Post
                     <div id='post_body'>
                     $body
                     <br>
-                     </div>
+                    </div>
+                    <div class ='newsfeed'>
+                    $comment_check_num comments &nbsp;&nbsp;&nbsp;
+                    <iframe src='like.php?post_id=$id' scrolling ='no'></iframe>
+                    
+                    </div>
                     </div>
                     <div class='post_comment' id='toggleComment$id' style='display:none;'>
                     <iframe src='comment_frame.php?post_id=$id' id='comment_iframe'frameborder='0' ></iframe>
