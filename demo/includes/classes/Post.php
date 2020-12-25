@@ -119,6 +119,22 @@ class Post
                     $last_name=$user_row['last_name'];
                     $profile_pic=$user_row['profile_pic'];
 
+                    ?>
+					<script> 
+						function toggle<?php echo $id; ?>() {
+
+ 							
+								var element = document.getElementById("toggleComment<?php echo $id; ?>");
+
+								if(element.style.display == "block") 
+									element.style.display = "none";
+								else 
+									element.style.display = "block";
+							
+						}
+
+					</script>
+					<?php
                     //time frame
                     $date_time_now=date("Y-m-d H:i:s");//teh current date
                     $start_date=new DateTime($date_time);//time of post
@@ -202,10 +218,11 @@ class Post
                             $time_message=$interval->s ."seconds ago";
                         }
                     }
-                    $str.="<div class='status_post'>
-                    <div class='post_profile_pic'>
-                    <img src='$profile_pic' width='50'>
-                    </div>
+                    // on click msh sh8ala enma ama b3mlha display block btzhr requested url not found
+                    $str.="<div class='status_post' onClick='javascript:toggle$id()'>
+                        <div class='post_profile_pic'>
+                        <img src='$profile_pic' width='50'>
+                        </div>
 
                     <div class='posted_by' style='color:#ACACAC;'>
                     <a href='$added_by'>$first_name $last_name</a> $user_to &nbsp;&nbsp;&nbsp;&nbsp;$time_message
@@ -215,6 +232,9 @@ class Post
                     <br>
                      </div>
                     </div>
+                    <div class='post_comment' id='toggleComment$id' style='display:none;'>
+                    <iframe src='comment_frame.php?post_id=$id' id='comment_iframe'frameborder='0' ></iframe>
+                     </div>
                     <hr>";
             }
             }//end of while
@@ -225,8 +245,6 @@ class Post
              }
                     else
                 $str.="<input type='hidden' class='nomoreposts' value='true'><p style='text-align: centre;'> OOOPS! no more posts</p>";
-
-
 
         }//end of if(mysqli_num_rows($data_query)) 
         echo $str;
